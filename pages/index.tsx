@@ -14,7 +14,6 @@ const Home = () => {
       const {data:{items, next}} = await Api.get('/')
       setCats(items)
       setNextPage(next)
-      console.log(items)
     }
 
     fetchCats()

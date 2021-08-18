@@ -21,14 +21,9 @@ const CatItem:FC<CatComponent> = ({cat}) => (
       <CatField label='Color' value={cat.color} />
     </ul> 
     <p className='text-sm font-normal'>tags: 
-      {Object.keys(cat.tags).map( tag => {
-        const tagType = typeof cat.tags[tag]
+      {Object.keys(cat.tags).map( (tag, i)=> {
         const value = cat.tags[tag]
-        if(tagType === 'boolean'){
-          return value && <Badge>{tag}</Badge>
-        } else {
-          return <Badge>{tag}: {value}</Badge>
-        }
+        return <Badge key={i}>{tag}: {value}</Badge>
       })}
     </p>
   </li>
