@@ -1,23 +1,10 @@
-import {useEffect, useState} from 'react'
 import Head from 'next/head';
 import Image from 'next/image';
-import Api from 'helpers/axios'
 import CatItem from 'components/CatItem';
-import {Cat} from 'helpers/types'
+import useCatApi from 'hooks/useCatApi'
 
 const Home = () => {
-  const [cats, setCats] = useState<Cat[]>([])
-  const [nextPage, setNextPage] = useState() 
-
-  useEffect(()=>{
-    const fetchCats = async () => {
-      const {data:{items, next}} = await Api.get('/')
-      setCats(items)
-      setNextPage(next)
-    }
-
-    fetchCats()
-  }, [])
+  const {cats} = useCatApi()
 
   return (
     <div className="bg-purple-400 min-h-full">
