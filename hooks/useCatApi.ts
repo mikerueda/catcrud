@@ -18,7 +18,9 @@ export default (initialCats:number) => {
     getCats(initialCats)
   }
 
-  const createCat = (cat) => {}
+  const createCat = (cat) => {
+    
+  }
 
   useEffect(()=>{
     getCats(initialCats)

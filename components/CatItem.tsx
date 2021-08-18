@@ -19,7 +19,7 @@ const CatItem:FC<CatComponent> = ({cat, deleteCat}) => (
   <li className='p-4 shadow-md mb-4 rounded bg-white text-gray-700'>
     <div className='flex flex-row justify-between'>
       <p className='text-lg font-bold text-purple-600'>{cat.name}</p>
-      <Button onClick={()=> deleteCat(cat.id)}>Delete :(</Button>
+      <Button variant='red' onClick={()=> deleteCat(cat.id)}>Delete :(</Button>
     </div>
     <ul className='flex flex-row'>
       <CatField label='Breed' value={cat.breed} />
