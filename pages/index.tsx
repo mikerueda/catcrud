@@ -27,26 +27,26 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="">
+    <div className="bg-purple-400 min-h-full">
       <Head>
-        <title>CatCrud</title>
+        <title>CatsCrud</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='container mx-auto p-4'>
-        <header>
+        <header className='flex flex-row my-4 text-2xl leading-4 text-yellow-200 font-black items-center	'>
           <Image src="/logo.png" alt="logo" width="30" height="30"/>
-          <h1>CatCrud</h1>
+          <h1>CatsCrud</h1>
         </header>
         <ul>
-          {cats.map( cat => <li className='p-4 shadow-md mb-4 rounded'>
-            <p className='text-lg font-light'>{cat.name}</p>
+          {cats.map( cat => <li className='p-4 shadow-md mb-4 rounded bg-white text-gray-700'>
+            <p className='text-lg font-bold text-purple-600'>{cat.name}</p>
             <ul className='flex flex-row'>
               <li className='text-sm font-bold mr-2'><span className='font-normal'>Color: </span>{cat.color}</li>  
               <li className='text-sm font-bold'><span className='font-normal'>Breed: </span>{cat.breed}</li>  
             </ul> 
             <p className='text-sm font-normal'>tags: 
               {Object.keys(cat.tags).map( tag => 
-                <span className='text-sm inline-block bg-gray-100 rounded ml-2 px-2' >{tag}</span>
+                <span className='text-sm inline-block bg-yellow-100 rounded ml-2 px-2 '>{tag}</span>
               )}
             </p>
           </li>)}
